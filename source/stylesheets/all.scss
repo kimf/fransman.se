@@ -1,55 +1,83 @@
 @charset "utf-8";
 
 @import "bourbon";
-@import "neat";
 
 body {
   background: #f4f4f4;
+  color: #444;
   font: 19px/1.5em 'Source Sans Pro', 'Helvetice Neue', sans-serif;
 }
 
 
-section{
-  @include outer-container;
-  article { @include span-columns(9); }
-  @include shift(3);
-}
-
-// .projects {
-//   margin-top: 400px;
-// }
-
 .header {
-  @include row();
-  background-color: #369ca6;
-  background-image: url('/images/keyboard.png'), url('/images/someguy.png');
-  background-position: top left, bottom right;
+  background-color: #2a94d6;
+  background-image: url('/images/keyboard.png'), url('/images/geo.png');
+  background-position: top left, top left;
   background-repeat: no-repeat;
+  background-size: auto, cover;
   position: relative;
-  text-align: center;
+  @include clearfix;
 
   h1 {
-    font-size: 3em;
-    margin-top: 100px;
-    margin-bottom: 40px;
+    float: left;
+    font-size: 2em;
+    margin: 140px 40px 20px 40px;
     color: #fff;
     font-weight: 700;
+    @include clearfix;
+
+    span {
+      margin: 20px 0;
+      float: left;
+      i {
+        background: #fff;
+        display: inline-block;
+        border: 1px solid rgba(#ccc, 0.8);
+        padding: 10px;
+        margin: 3px;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        font: 700 30px/30px 'Helvetica', sans-serif;
+        color: #777;
+        margin-left: -8px;
+      }
+
+      i:first-child {
+        @include transform(rotate(3deg));
+      }
+
+      i:nth-child(2){
+        @include transform(rotate(7deg));
+      }
+
+      i:last-child {
+        @include transform(rotate(-15deg));
+      }
+
+    }
   }
 
   ul{
-    padding: 0;
+    @include clearfix;
+    float: left;
+    padding: 0 40px;
+    width: 100%;
     li {
       color: #fefefe;
     }
   }
 
   nav {
-    margin: 0;
+    float: left;
+    width: 100%;
+    margin-left: 40px;
     padding: 40px 0;
+    @include clearfix;
     a {
-      font-size: 4em;
+      font-size: 3em;
       text-decoration: none;
-      color: #eee;
+      color: #f0f1f2;
       @include animation(color 2.0s ease-in-out);
 
       &:hover {
@@ -74,6 +102,99 @@ section{
         &.github{
           color: #000;
         }
+      }
+    }
+  }
+}
+
+section{
+  padding: 40px;
+  @include clearfix;
+
+  .inner, header {
+    @include clearfix;
+    float: left;
+
+    p {
+      margin-bottom: 1.5em;
+    }
+
+    i {
+      font-style: italic;
+      color: #777;
+    }
+  }
+}
+
+section.dribbble {
+  background: #ea4c89 url('/images/geo2.png') no-repeat;
+  background-size: cover;
+  padding: 0;
+  header {
+    padding: 20px;
+    width: 100%;
+    h2{
+      color: #fff;
+      font-size: 1.5em;
+    }
+  }
+
+  .images {
+    img {
+      margin: 20px;
+    }
+
+    &:nth-child(3n+3){
+      @include clearfix;
+    }
+  }
+}
+
+
+@media (min-width: 700px) {
+  .header {
+
+    h1 {
+      margin: 50px 0 20px 240px;
+      font-size: 2.5em;
+
+      span {
+        float: none;
+        margin-left: 10px;
+      }
+    }
+
+    ul {
+      // padding: 0 40px;
+      margin-left: 200px;
+    }
+
+    nav {
+      font-size: 1.5em;
+      float: left;
+      margin-left: 225px;
+    }
+  }
+
+  section {
+    padding: 40px;
+
+    .inner, header {
+      max-width: 600px;
+      margin: 0 0 0 200px;
+    }
+
+  }
+
+  section.dribbble {
+    header {
+      margin: 20px 0 0 0;
+    }
+
+    .inner {
+      max-width: 680px;
+      img {
+        margin: 20px 0 20px 20px;
       }
     }
   }
@@ -104,8 +225,6 @@ section{
 }
 
 a.symbol:before {
-    content: attr(title);
-    margin-right: 0.3em;
-    font-size: 130%;
+  content: attr(title);
 }
 

@@ -45,8 +45,17 @@ activate :livereload
 #   end
 # end
 
+activate :deploy do |deploy|
+  deploy.method = :rsync
+  deploy.host   = "fransman.se"
+  deploy.user   = "root"
+  deploy.clean  = true
+  deploy.path   = "/var/www/fransman.se"
+  deploy.build_before = true # default: false
+end
+
+
 activate :bourbon
-activate :neat
 
 set :css_dir, 'stylesheets'
 

@@ -7,16 +7,21 @@
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || "Kim Fransman" %></title>
 
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
     <%= stylesheet_link_tag "normalize", "all" %>
-    <%= javascript_include_tag  "all" %>
   </head>
 
   <body class="<%= page_classes %>">
     <%= yield %>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <%= javascript_include_tag  "all" %>
   </body>
 </html>
