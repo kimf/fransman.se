@@ -79,5 +79,5 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
-  activate :gzip, exts: %w(.js .css .html .htm .svg .ttf .otf .woff .eot)
+  activate :gzip, exts: %w(.js .css .html .htm .svg .ttf .otf .woff .eot .png .jpg .jpeg .gif .ico)
 end
