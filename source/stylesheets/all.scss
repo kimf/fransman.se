@@ -2,12 +2,39 @@
 
 @import "bourbon";
 
-body {
-  background: #f4f4f4;
-  color: #444;
-  font: 19px/1.5em 'Source Sans Pro', 'Helvetice Neue', sans-serif;
+* {
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+
+  position: relative;
 }
 
+body {
+  font-family: 'Source Sans Pro', 'Helvetice Neue', sans-serif;
+  background: linear-gradient(270deg, #27a1e1, #93e756);
+  background-size: 400% 400%;
+
+  -webkit-animation: bg 36s ease infinite;
+  -z-animation: bg 36s ease infinite;
+  -o-animation: bg 36s ease infinite;
+  animation: bg 36s ease infinite;
+
+  color: #444;
+
+  font-weight: lighter;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 150%;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+
+body p {
+  -webkit-animation-delay: 200ms;
+}
 
 .header {
   background-color: #2a94d6;
@@ -224,3 +251,25 @@ a.symbol:before {
   content: attr(title);
 }
 
+
+
+@-webkit-keyframes bg {
+    0%{background-position:0% 87%}
+    50%{background-position:100% 14%}
+    100%{background-position:0% 87%}
+}
+@-moz-keyframes bg {
+    0%{background-position:0% 87%}
+    50%{background-position:100% 14%}
+    100%{background-position:0% 87%}
+}
+@-o-keyframes bg {
+    0%{background-position:0% 87%}
+    50%{background-position:100% 14%}
+    100%{background-position:0% 87%}
+}
+@keyframes bg {
+    0%{background-position:0% 87%}
+    50%{background-position:100% 14%}
+    100%{background-position:0% 87%}
+}
