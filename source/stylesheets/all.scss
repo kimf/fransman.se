@@ -14,18 +14,8 @@
 body {
   font-family: 'Source Sans Pro', 'Helvetice Neue', sans-serif;
 
-  background-color: #2a94d6;
-  background-image:
-    -webkit-gradient(linear, right top, left top from(#2a94d6), to(#57ae8a));
-  background-image:
-    -webkit-linear-gradient(right, #2a94d6, #57ae8a);
-  background-image:
-    -moz-linear-gradient(right, #2a94d6, #57ae8a);
-  background-image:
-    -o-linear-gradient(right, #2a94d6, #57ae8a);
-  background-image:
-    linear-gradient(to left, #2a94d6, #57ae8a);
-  background-size: 400% 400%;
+  @include linear-gradient(to right, #2a94d6, #185a84);
+  background-size: 200% 200%;
 
   color: #fff;
   font-weight: lighter;
