@@ -55,8 +55,6 @@ activate :deploy do |deploy|
 end
 
 
-activate :bourbon
-
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
