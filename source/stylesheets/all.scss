@@ -1,163 +1,88 @@
 @charset "utf-8";
-
-@import "bourbon";
-
-* {
-  -webkit-transition: all 200ms linear;
-  -moz-transition: all 200ms linear;
-  -o-transition: all 200ms linear;
-  transition: all 200ms linear;
-
-  position: relative;
-}
+@import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
 
 body {
-  font-family: 'Source Sans Pro', 'Helvetice Neue', sans-serif;
-
-  @include linear-gradient(to right, #0B83C9, #043857);
-  background-size: 200% 200%;
-
-  color: #fff;
-  font-weight: lighter;
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 150%;
-
+  background: #2c2d26;
+  color: #f9f9f4;
+  font-feature-settings: "calt" 1;
+  font-variant-ligatures: contextual;
+  font-family: "Fira Code", monospace;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  margin: 0;
 }
 
 a {
-  color: #f0f1f2;
+  border-bottom: 1px solid #29858f;
+  color: #4a90e2;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.9;
+  border-color: #444;
+}
+p {
+  margin: 0 0 24px;
 }
 
-
-.header {
-  position: relative;
-  @include clearfix;
-
-  h1 {
-    float: left;
-    font-size: 2em;
-    margin: 40px;
-    color: #fff;
-    font-weight: 700;
-    @include clearfix;
-  }
-
-  ul{
-    @include clearfix;
-    float: left;
-    padding: 0 40px;
-    width: 100%;
-    li {
-      color: #fefefe;
-      list-style: circle;
-    }
-  }
-}
-
-section{
-  padding: 20px;
-  @include clearfix;
-
-  .inner, header {
-    @include clearfix;
-    float: left;
-
-    p {
-      margin-bottom: 1em;
-    }
-
-    i {
-      font-style: italic;
-      color: #cecece;
-    }
-
-    a:hover {
-      background: rgba(255,255, 255, 0.1);
-    }
-  }
-}
-
-nav {
+img {
   float: left;
-  width: 100%;
-  margin-left: 40px;
-  padding: 20px;
-  @include clearfix;
-  a {
-    font-size: 2em;
-    opacity: 0.75;
-    text-decoration: none;
-    color: #f0f1f2;
-    @include animation(color 2.0s ease-in-out);
-
-    &:hover {
-      opacity: 1;
-    }
-  }
+  margin-right: 20px;
 }
 
+h1 {
+  font-weight: 700;
+  color: #d4f50c;
+  font-size: 2em;
+}
 
-@media (min-width: 700px) {
-  .header {
+ul {
+  margin: 20px 0;
+}
 
-    h1 {
-      margin: 50px;
-      font-size: 2.5em;
-    }
+li {
+  color: #fa2c6d;
+  display: inline;
+  font-weight: 700;
+}
 
-    ul {
-      // padding: 0 40px;
-      margin-left: 40px;
-    }
+li:not(:last-child)::after {
+  content: ",";
+}
 
-    nav {
-      font-size: 1.5em;
-      float: left;
-      margin-left: 60px;
+section {
+  padding: 40px 80px;
+  max-width: 740px;
+}
 
-      span {
-        font-size: 0.8em;
-      }
-    }
-  }
+strong {
+  font-weight: bold;
+  color: #d4f50c;
+}
 
+hr {
+  height: 1px;
+  border: 0;
+  border-bottom: 1px solid #111;
+  margin-bottom: 20px;
+}
+
+.goodbye {
+  font-style: italic;
+  color: #fa2c6d;
+}
+
+@media (max-width: 600px) {
   section {
-    padding: 20px 40px;
-
-    .inner, header {
-      max-width: 600px;
-      margin: 0 0 0 20px;
-    }
-
+    padding: 20px;
   }
 }
 
-
-@font-face {
-  font-family: 'Mono Social Icons Font';
-  src: url('/fonts/MonoSocialIconsFont-1.10.eot');
-  src: url('/fonts/MonoSocialIconsFont-1.10.eot?#iefix') format("embedded-opentype"), url('/fonts/MonoSocialIconsFont-1.10.woff') format("woff"), url('/fonts/MonoSocialIconsFont-1.10.ttf') format("truetype"), url('/fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format("svg");
-  src: url('/fonts/MonoSocialIconsFont-1.10.ttf') format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-.symbol, a.symbol:before {
-    font-family: 'Mono Social Icons Font';
-    -webkit-text-rendering: optimizeLegibility;
-    -moz-text-rendering: optimizeLegibility;
-    -ms-text-rendering: optimizeLegibility;
-    -o-text-rendering: optimizeLegibility;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    -ms-font-smoothing: antialiased;
-    -o-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-}
-
-a.symbol:before {
-  content: attr(title);
+@media (max-width: 400px) {
+  body {
+    font-size: 14px;
+  }
 }
