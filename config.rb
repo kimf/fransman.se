@@ -36,7 +36,7 @@
 # activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
-activate :livereload
+# activate :livereload
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -45,14 +45,14 @@ activate :livereload
 #   end
 # end
 
-activate :deploy do |deploy|
-  deploy.method = :rsync
-  deploy.host   = "fransman.se"
-  deploy.user   = "root"
-  deploy.clean  = true
-  deploy.path   = "/var/www/fransman.se"
-  deploy.build_before = true # default: false
-end
+# activate :deploy do |deploy|
+#   deploy.method = :rsync
+#   deploy.host   = "fransman.se"
+#   deploy.user   = "root"
+#   deploy.clean  = true
+#   deploy.path   = "/var/www/fransman.se"
+#   deploy.build_before = true # default: false
+# end
 
 
 set :css_dir, 'stylesheets'
