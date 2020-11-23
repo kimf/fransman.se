@@ -15,8 +15,8 @@ body {
 }
 
 a {
-  border-bottom: 1px solid #29858f;
-  color: #4a90e2;
+  border-bottom: 1px solid #9DBBDD;
+  color: #91BCED;
   font-weight: bold;
   text-decoration: none;
 }
@@ -44,7 +44,7 @@ ul {
 }
 
 li {
-  color: #fa2c6d;
+  color: #FD9BBC;
   display: inline;
   font-weight: 700;
 }
@@ -72,7 +72,7 @@ hr {
 
 .goodbye {
   font-style: italic;
-  color: #fa2c6d;
+  color: #d4f50c;
 }
 
 @media (max-width: 600px) {
