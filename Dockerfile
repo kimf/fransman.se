@@ -14,6 +14,6 @@ RUN apk add --virtual build-deps git build-base ruby-dev \
 
 # Only do a bundle install if the gemfile changes
 COPY Gemfile* /app/
-RUN bundle install --clean --without development test
+RUN bundle install --without development test
 COPY . /app
 RUN bundle exec middleman build --verbose
