@@ -1,4 +1,4 @@
-FROM ruby:2.7-alpine AS middleman-builder
+FROM ruby:2.7.0-alpine AS middleman-builder
 WORKDIR /app
 ENV RAILS_ENV production
 
