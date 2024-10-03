@@ -9,7 +9,7 @@ RUN apk update && apk --update add ruby ruby-irb nodejs ruby-json ruby-rake \
 # Necessary for some gems which are compiled on bundle install
 RUN apk add --virtual build-deps git build-base ruby-dev \
    libc-dev linux-headers && \
-   gem install bundler --no-ri --no-rdoc && \
+   gem install bundler && \
    bundle config build.nokogiri --use-system-libraries
 
 # Only do a bundle install if the gemfile changes
