@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kim Fransman</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background-color: #0d1c2c;
+      color: #F8F9FA;
+    }
+
+    header {
+      position: relative;
+      background: linear-gradient(to bottom, #0B1622 0%, #1B263B 100%);
+      padding: 100px 1rem 4rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    header img {
+      width: 100px;
+      height: auto;
+      border-radius: 8px;
+      border: 2px solid #493032;
+      margin-bottom: 1rem;
+      z-index: 1;
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 1.5rem;
+      margin: 0;
+      color: #48CAE4;
+      position: relative;
+      text-transform: uppercase;
+      z-index: 1;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: #F8F9FA;
+      margin-top: 0.5rem;
+      position: relative;
+      z-index: 1;
+      max-width: 500px;
+      text-transform: uppercase;
+      text-wrap:pretty;
+      line-height: 1.5rem;
+      margin: 20px auto;
+    }
+
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      background-image: radial-gradient(rgba(72, 202, 228, 0.2) 1px, transparent 1px);
+      background-size: 20px 20px;
+      animation: moveStars 20s linear infinite;
+    }
+
+    @keyframes moveStars {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+
+    .angled-border {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 75px;
+      background: #0D1B2A;
+      clip-path: polygon(0 100%, 0 100%, 100% 0);
+    }
+
+    .content {
+      max-width: 500px;
+      margin: 40px auto;
+    }
+
+    .section {
+      background: #1B263B;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5rem;
+      border: 1px dashed #2d4662;
+    }
+
+    .links {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .links a {
+      margin: 0 10px;
+      color: #277ae6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="stars"></div>
+  <img src="2.png" alt="Kim Fransman Pixel Avatar" />
+  <h1>Kim Fransman</h1>
+  <p class="tagline">Father · Golf-nerd² · Developer of stuff <br/> Starter of too many unfinished side projects</p>
+  <div class="angled-border"></div>
+</header>
+
+<div class="content">
+  <div class="section">
+    <p>I'm a developer with 20+ years of experience — from web and mobile to backend, devops and leadership. These days, I mostly try to say no more often.</p>
+    <p>I have long and fruitful relationship with Javascript, HTML & CSS and sometimes I even do some product design, interaction design, UX design, growth-hacking and other cool buzzwords needed to deliver stuff humans love to use.
+    <p>At work, I plan, strategize and produce stuff, preferably for both backend and frontend, and sometime I do mobile stuff as well, mainly with React Native and Kotlin Multiplatform.</p>
+  </div>
+
+  <div class="links">
+    <a href="https://twitter.com/kimfransman" target="_blank">Twitter/X</a>
+    <a href="https://github.com/kimf" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/kimfransman" target="_blank">LinkedIn</a>
+  </div>
+</div>
+
+</body>
+</html>
