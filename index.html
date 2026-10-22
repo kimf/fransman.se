@@ -4,137 +4,229 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kim Fransman</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <meta name="description" content="Kim Fransman: developer with 20+ years in web, mobile, backend and leadership. Golf nerd. Designs and 3D-prints things, sometimes with electronics inside.">
+  <link rel="canonical" href="https://fransman.se/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Kim Fransman">
+  <meta property="og:description" content="Developer of stuff, golf nerd, designs and 3D-prints things.">
+  <meta property="og:url" content="https://fransman.se/">
+  <meta property="og:image" content="https://fransman.se/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kim Fransman",
+    "url": "https://fransman.se/",
+    "image": "https://fransman.se/2.png",
+    "jobTitle": "Developer",
+    "sameAs": [
+      "https://github.com/kimf",
+      "https://www.linkedin.com/in/kimfransman",
+      "https://www.printables.com/@KimFransman_2867101"
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
+    /* Same tokens and shell as the Flows & Layers hub, so the two look like one site until the redirect. */
+    :root {
+      color-scheme: dark light;
+      --ink: #0f100e;
+      --paper: #e8e6df;
+      --muted: #9a9890;
+      --rule: #3a3c37;
+      --blueprint: #7fa9b8;
+      --accent: #e3a934;
+      --sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --ink: #f2f0ea;
+        --paper: #161714;
+        --muted: #5e5c55;
+        --rule: #cfccc2;
+        --blueprint: #2f6577;
+        --accent: #855b00;
+      }
+    }
+
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: 'Share Tech Mono', monospace;
-      background-color: #0d1c2c;
-      color: #F8F9FA;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--sans);
+      line-height: 1.5;
     }
-
-    header {
-      position: relative;
-      background: linear-gradient(to bottom, #0B1622 0%, #1B263B 100%);
-      padding: 100px 1rem 4rem;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    header img {
-      width: 100px;
-      height: auto;
-      border-radius: 8px;
-      border: 2px solid #493032;
-      margin-bottom: 1rem;
-      z-index: 1;
-      position: relative;
-    }
-
-    h1 {
-      font-family: 'Press Start 2P', monospace;
-      font-size: 1.5rem;
-      margin: 0;
-      color: #48CAE4;
-      position: relative;
-      text-transform: uppercase;
-      z-index: 1;
-    }
-
-    .tagline {
-      font-size: 1rem;
-      color: #F8F9FA;
-      margin-top: 0.5rem;
-      position: relative;
-      z-index: 1;
-      max-width: 500px;
-      text-transform: uppercase;
-      text-wrap:pretty;
-      line-height: 1.5rem;
-      margin: 20px auto;
-    }
-
-    .stars {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    /* Blueprint grid from the hub's 3D panel, rising from the bottom of the viewport and fading out upwards. */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
       pointer-events: none;
-      z-index: 0;
-      background-image: radial-gradient(rgba(72, 202, 228, 0.2) 1px, transparent 1px);
-      background-size: 20px 20px;
-      animation: moveStars 20s linear infinite;
+      background:
+        linear-gradient(color-mix(in srgb, var(--blueprint) 14%, transparent) 1px, transparent 1px) 0 0 / 24px 24px,
+        linear-gradient(90deg, color-mix(in srgb, var(--blueprint) 14%, transparent) 1px, transparent 1px) 0 0 / 24px 24px;
+      mask-image: linear-gradient(to top, black, transparent 75%);
     }
+    a { color: inherit; }
 
-    @keyframes moveStars {
-      0% { background-position: 0 0; }
-      100% { background-position: 100px 100px; }
+    /* Rulers from the Flows & Layers 3D area, in real units: 1mm minor, 5mm mid, 1cm major ticks. */
+    body { padding-top: 14px; }
+    .ruler-x, .ruler-r {
+      position: fixed;
+      z-index: 40;
+      pointer-events: none;
+      background-color: var(--ink);
+      --tick: color-mix(in srgb, var(--blueprint) 55%, transparent);
     }
-
-    .angled-border {
-      position: absolute;
+    .ruler-x {
+      inset: 0 0 auto 0;
+      height: 14px;
+      border-bottom: 1px solid var(--rule);
+      background-image:
+        repeating-linear-gradient(to right, var(--tick) 0 1px, transparent 1px 1cm),
+        repeating-linear-gradient(to right, var(--tick) 0 1px, transparent 1px 5mm),
+        repeating-linear-gradient(to right, var(--tick) 0 1px, transparent 1px 1mm);
+      background-size: 100% 100%, 100% 8px, 100% 4px;
+      background-position: 0 0, 0 100%, 0 100%;
+      background-repeat: repeat-x;
+    }
+    /* Right ruler: wider, numbered in cm. Hidden on phones. */
+    .ruler-r {
+      display: none;
+      top: 14px;
       bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 75px;
-      background: #0D1B2A;
-      clip-path: polygon(0 100%, 0 100%, 100% 0);
+      right: 0;
+      width: 40px;
+      overflow: hidden;
+      border-left: 1px solid var(--rule);
+      background-image:
+        repeating-linear-gradient(to bottom, var(--tick) 0 1px, transparent 1px 1cm),
+        repeating-linear-gradient(to bottom, var(--tick) 0 1px, transparent 1px 5mm),
+        repeating-linear-gradient(to bottom, var(--tick) 0 1px, transparent 1px 1mm);
+      background-repeat: repeat-y;
+      background-size: 14px 100%, 9px 100%, 5px 100%;
+      background-position: 100% 0, 100% 0, 100% 0;
     }
-
-    .content {
-      max-width: 500px;
-      margin: 40px auto;
+    .ruler-r span {
+      position: absolute;
+      right: 17px;
+      translate: 0 -50%;
+      font: 10px var(--mono);
+      color: var(--muted);
     }
-
-    .section {
-      background: #1B263B;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.5rem;
-      border: 1px dashed #2d4662;
+    @media (min-width: 640px) {
+      body { padding-right: 40px; }
+      .ruler-r { display: block; }
     }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-    .links {
-      text-align: center;
-      margin: 2rem 0;
+    main { max-width: 72rem; width: 100%; margin: 0 auto; }
+    .mono { font-family: var(--mono); font-size: 13px; }
+    .upper { text-transform: uppercase; letter-spacing: 0.025em; }
+
+    .links a { text-decoration: none; }
+    .links a:hover { color: var(--accent); }
+
+    main { flex: 1; padding-bottom: 6rem; }
+    /* Phone: small avatar beside the name, intro below. Desktop: full-size avatar right of both. */
+    .hero { display: grid; grid-template-columns: 1fr auto; align-items: end; column-gap: 1rem; padding: 3.5rem 1rem 2.5rem; }
+    .hero .intro { grid-column: 1 / -1; }
+    .kicker { margin: 0; color: var(--blueprint); }
+    h1 { margin: 0.75rem 0 0; font-size: clamp(2rem, 8vw, 3rem); line-height: 0.95; font-weight: 600; letter-spacing: -0.025em; font-stretch: 120%; }
+    .intro { margin: 1.25rem 0 0; max-width: 56ch; font-size: 1.125rem; color: var(--muted); text-wrap: pretty; }
+
+    /* Avatar in a frame with crosshair marks on two corners (the hub's .frame). */
+    .frame { position: relative; border: 1px solid var(--rule); }
+    .frame::before, .frame::after, .tee::after {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      pointer-events: none;
+      background:
+        linear-gradient(var(--blueprint), var(--blueprint)) center / 1px 100% no-repeat,
+        linear-gradient(var(--blueprint), var(--blueprint)) center / 100% 1px no-repeat;
     }
+    .frame::before { top: -5px; left: -5px; }
+    .frame::after { bottom: -5px; right: -5px; }
+    .avatar { display: block; width: 64px; height: 64px; padding: 5px; image-rendering: pixelated; }
 
-    .links a {
-      margin: 0 10px;
-      color: #277ae6;
-      text-decoration: none;
-      font-weight: bold;
+    /* `[01] Label` strip with a T-junction mark where the divider meets the line. */
+    .label { display: flex; margin: 0; border-block: 1px solid var(--rule); color: var(--blueprint); }
+    .label span { padding: 0.75rem 1rem; }
+    .tee { position: relative; border-right: 1px solid var(--rule); }
+    .tee::after { bottom: -5px; right: -5px; }
+
+    .body { padding: 0 1rem 2.5rem; max-width: 65ch; line-height: 1.65; }
+    .body p { margin: 1rem 0 0; color: var(--muted); }
+    .body p:first-child { color: var(--paper); }
+
+    .links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 0; padding: 1.5rem 1rem; list-style: none; }
+    .links a { display: inline-block; border: 1px solid var(--rule); padding: 0.5rem 1rem; }
+    .links a:hover { border-color: var(--paper); }
+
+
+    @media (min-width: 640px) {
+      .hero, .label span, .body, .links { padding-inline: 2rem; }
+      h1 { font-size: 3.75rem; }
+      .hero { column-gap: 2rem; }
+      .hero .intro { grid-column: 1; }
+      .hero .frame { grid-column: 2; grid-row: 1 / span 2; align-self: start; }
+      .avatar { width: 112px; height: 112px; padding: 8px; }
     }
-
-    .links a:hover {
-      text-decoration: underline;
+    /* Desktop: About and Elsewhere side by side, split by a rule. */
+    @media (min-width: 900px) {
+      .cols { display: grid; grid-template-columns: 1fr 26rem; }
+      .cols > section + section { border-left: 1px solid var(--rule); }
     }
   </style>
 </head>
 <body>
+<div class="ruler-x" aria-hidden="true"></div>
+<div class="ruler-r" aria-hidden="true"><span style="top:1cm">1</span><span style="top:2cm">2</span><span style="top:3cm">3</span><span style="top:4cm">4</span><span style="top:5cm">5</span><span style="top:6cm">6</span><span style="top:7cm">7</span><span style="top:8cm">8</span><span style="top:9cm">9</span><span style="top:10cm">10</span><span style="top:11cm">11</span><span style="top:12cm">12</span><span style="top:13cm">13</span><span style="top:14cm">14</span><span style="top:15cm">15</span><span style="top:16cm">16</span><span style="top:17cm">17</span><span style="top:18cm">18</span><span style="top:19cm">19</span><span style="top:20cm">20</span><span style="top:21cm">21</span><span style="top:22cm">22</span><span style="top:23cm">23</span><span style="top:24cm">24</span><span style="top:25cm">25</span><span style="top:26cm">26</span><span style="top:27cm">27</span><span style="top:28cm">28</span><span style="top:29cm">29</span><span style="top:30cm">30</span><span style="top:31cm">31</span><span style="top:32cm">32</span><span style="top:33cm">33</span><span style="top:34cm">34</span><span style="top:35cm">35</span><span style="top:36cm">36</span><span style="top:37cm">37</span><span style="top:38cm">38</span><span style="top:39cm">39</span><span style="top:40cm">40</span></div>
 
-<header>
-  <div class="stars"></div>
-  <img src="2.png" alt="Kim Fransman Pixel Avatar" />
-  <h1>Kim Fransman</h1>
-  <p class="tagline">Father · Golf-nerd² · Developer of stuff <br/> Starter of too many unfinished side projects</p>
-  <div class="angled-border"></div>
-</header>
+<main>
+  <section class="hero">
+    <div>
+      <p class="kicker mono upper">Subject / 01</p>
+      <h1>Kim Fransman</h1>
+    </div>
+    <div class="frame"><img class="avatar" src="2.png" alt="Kim Fransman pixel avatar" /></div>
+    <p class="intro">Father · Golf-nerd² · Developer of stuff · Designs and 3D&#8209;prints things, sometimes with electronics inside. Starter of too many unfinished side projects.</p>
+  </section>
 
-<div class="content">
-  <div class="section">
-    <p>I'm a developer with 20+ years of experience — from web and mobile to backend, devops and leadership. These days, I mostly try to say no more often.</p>
-    <p>I have long and fruitful relationship with Javascript, HTML & CSS and sometimes I even do some product design, interaction design, UX design, growth-hacking and other cool buzzwords needed to deliver stuff humans love to use.
-    <p>At work, I plan, strategize and produce stuff, preferably for both backend and frontend, and sometime I do mobile stuff as well, mainly with React Native and Kotlin Multiplatform.</p>
+  <div class="cols">
+  <section>
+  <p class="label mono"><span class="tee">02</span><span>About</span></p>
+  <div class="body">
+    <p>I'm a developer with 20+ years of experience, from web and mobile to backend, devops and leadership. These days, I mostly try to say no more often.</p>
+    <p>I have a long and fruitful relationship with JavaScript, HTML &amp; CSS, and sometimes I even do some product design, interaction design, UX design, growth-hacking and other cool buzzwords needed to deliver stuff humans love to use.</p>
+    <p>At work, I plan, strategize and produce stuff, preferably for both backend and frontend, and sometimes I do mobile stuff as well, mainly with React Native and Kotlin Multiplatform.</p>
+    <p>I also design things in CAD and 3D-print them: keyboards, mostly, and things that fix an everyday annoyance or make a round of golf a little better.</p>
   </div>
+  </section>
 
-  <div class="links">
-    <a href="https://twitter.com/kimfransman" target="_blank">Twitter/X</a>
-    <a href="https://github.com/kimf" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/kimfransman" target="_blank">LinkedIn</a>
+  <section>
+  <p class="label mono"><span class="tee">03</span><span>Elsewhere</span></p>
+  <ul class="links mono upper">
+    <li><a rel="me" href="https://github.com/kimf">GitHub</a></li>
+    <li><a rel="me" href="https://www.linkedin.com/in/kimfransman">LinkedIn</a></li>
+    <li><a rel="me" href="https://www.printables.com/@KimFransman_2867101">Printables</a></li>  </ul>
+  </section>
   </div>
-</div>
+</main>
 
 </body>
 </html>
