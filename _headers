@@ -1,0 +1,5 @@
+# shortcut: assets aren't fingerprinted, so rename the file when you change it (or browsers keep the old one for a year).
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/avatar.webp
+  Cache-Control: public, max-age=31536000, immutable
