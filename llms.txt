@@ -1,0 +1,12 @@
+# Kim Fransman
+
+> Personal site of Kim Fransman: developer with 20+ years in web, mobile, backend, devops and leadership. Golf nerd. Designs and 3D-prints things, sometimes with electronics inside.
+
+The site is a single page. Works mostly with JavaScript, HTML & CSS, React Native and Kotlin Multiplatform.
+
+## Links
+
+- [fransman.se](https://fransman.se/): About Kim Fransman
+- [GitHub](https://github.com/kimf): Code and side projects
+- [LinkedIn](https://www.linkedin.com/in/kimfransman): Work history
+- [Printables](https://www.printables.com/@KimFransman_2867101): 3D-printable designs

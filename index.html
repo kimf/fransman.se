@@ -29,10 +29,12 @@
     ]
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
   <style>
+    /* Self-hosted Google Fonts, latin subset. Archivo trimmed to the axes we use (wght 400-600, wdth 100-120). */
+    @font-face { font-family: "Archivo"; font-weight: 400 600; font-stretch: 100% 120%; font-display: swap; src: url(/fonts/archivo.woff2) format("woff2"); }
+    @font-face { font-family: "IBM Plex Mono"; font-weight: 400; font-display: swap; src: url(/fonts/plex-mono-400.woff2) format("woff2"); }
     /* Same tokens and shell as the Flows & Layers hub, so the two look like one site until the redirect. */
     :root {
       color-scheme: dark light;
@@ -203,7 +205,7 @@
       <p class="kicker mono upper">Subject / 01</p>
       <h1>Kim Fransman</h1>
     </div>
-    <div class="frame"><img class="avatar" src="2.png" alt="Kim Fransman pixel avatar" /></div>
+    <div class="frame"><img class="avatar" src="avatar.webp" width="192" height="192" fetchpriority="high" alt="Kim Fransman pixel avatar" /></div>
     <p class="intro">Father · Golf-nerd² · Developer of stuff · Designs and 3D&#8209;prints things, sometimes with electronics inside. Starter of too many unfinished side projects.</p>
   </section>
 
